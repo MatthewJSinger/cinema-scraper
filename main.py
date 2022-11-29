@@ -87,6 +87,11 @@ class Cinema:
                 print(key + " : " + ", ".join(map(str,timeStrings)))
             print("\n")
 
+    def whatsOn(self):
+        print(f"----------{self.name}----------")
+        for movie in self.movieInfo:
+            print(movie)
+
         
 
 class Movie:
@@ -116,7 +121,7 @@ class Movie:
         
 
 def run():
-    Cinema('Vue-cleveleys').printAllShowings()
+    Cinema("Vue-Cleveleys").printAllShowings()
 
 
     
