@@ -1,12 +1,14 @@
 import requests
 from bs4 import BeautifulSoup
-
+from CinemaScraperExceptions import *
 class Curator:
     def fetchURL(self,searchQuery):
         baseURL = "https://film.datathistle.com/search/what:"
         URL = baseURL + searchQuery
         page = requests.get(URL)
         soup = BeautifulSoup(page.content, "lxml")
+        if len(soup.select(".placeSummary a")) == 0:
+            raise CinemaNotFoundError(searchQuery)
         rawLink = soup.select(".placeSummary a")[0]
         link = rawLink.get('href')
         return "https://film.datathistle.com/" + link
