@@ -15,23 +15,20 @@ class Curator:
         page = requests.get(URL)
         soup = BeautifulSoup(page.content, "lxml")
         parent = soup.find(class_="eventSchedules")
-        movies = parent.findChildren("div", recursive=False)
+        movies = parent.findChildren(class_="byEvent", recursive=False)
         movieList = []
         for movieData in movies:
-            try:
-                name = movieData.h4.get_text()
-                description = movieData.p.get_text()
-                movie = Movie(name,description)
-                rawDays = movieData.findAll('h5')
-                for rawDay in rawDays:
-                    day = self.parseDay(rawDay.get_text())
-                    timeParent = rawDay.find_next_sibling("div")
-                    rawTimes = timeParent.find_all("li")
-                    times = [time.time.get_text() for time in rawTimes]
-                    movie.addShowing(day,times)
-                movieList.append(movie)
-            except AttributeError:
-                pass
+            name = movieData.h4.get_text()
+            description = movieData.p.get_text()
+            movie = Movie(name,description)
+            rawDays = movieData.findAll('h5')
+            for rawDay in rawDays:
+                day = self.parseDay(rawDay.get_text())
+                timeParent = rawDay.find_next_sibling("div")
+                rawTimes = timeParent.find_all("li")
+                times = [time.time.get_text() for time in rawTimes]
+                movie.addShowing(day,times)
+            movieList.append(movie)
             
         return movieList
 
