@@ -1,8 +1,7 @@
-from CinemaScraper import Cinema as Cinema      
+from CinemaScraper import Cinema 
 
 def run():
     Cinema("Vue Cleveleys").printAllShowings()
-
 
     
 if __name__ == '__main__':
