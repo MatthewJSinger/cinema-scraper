@@ -1,7 +1,7 @@
 from CinemaScraper import Cinema as Cinema      
 
 def run():
-    Cinema("Vue-Cleveleys").printAllShowings()
+    Cinema("Vue Cleveleys").printAllShowings()
 
 
     
