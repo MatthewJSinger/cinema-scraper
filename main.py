@@ -74,7 +74,9 @@ class Cinema:
     
         movieList = extractDetails(movies)
         return movieList
-
+    
+    def getAllShowings(self):
+        return self.movieInfo
 
     def printAllShowings(self):
         print(f"----------{self.name}----------")
@@ -87,7 +89,7 @@ class Cinema:
                 print(key + " : " + ", ".join(map(str,timeStrings)))
             print("\n")
 
-    def whatsOn(self):
+    def printWhatsOn(self):
         print(f"----------{self.name}----------")
         for movie in self.movieInfo:
             print(movie)
