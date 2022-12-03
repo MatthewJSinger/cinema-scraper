@@ -36,7 +36,7 @@ These can be accessed with the following:
 ```
 ### The Curator
 The curator is a class that handles the scraping i.e. fetching the data.
-Movie data can be fetched directly from a page using the curator class and returned as a list without instantiating a Cinema object
+Movie data can be fetched directly from a page using the curator class and returned as a list of movie objects without instantiating a Cinema object
 ```python
 from CinemaScraper import Curator
 Curator().fetchMovieData(https://film.datathistle.com/cinema/43008-vue-manchester-printworks")
