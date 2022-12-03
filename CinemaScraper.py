@@ -72,7 +72,7 @@ class Cinema:
     def __repr__(self):
         return self.name
     
-    def getAllShowings(self):
+    def getAllMovieData(self):
         return self.movieInfo
 
     def printAllShowings(self):
