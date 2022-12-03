@@ -2,7 +2,7 @@
 
 A script to find out what's on at the cinema
 ## Usage
-This project works by scraping data from the following website: [Data Thistle](https://film.datathistle.com/)
+This project works by scraping data from the following website: [Data Thistle](https://film.datathistle.com/).
 The Cinema class can be used to scrape all the information of all the movies playing at that cinema for the next week.
 Import it like this:
 ```python
