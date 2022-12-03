@@ -38,3 +38,29 @@ Movie data can be fetched directly from a page using the curator class and retur
 from CinemaScraper import Curator
 Curator().fetchMovieData(https://film.datathistle.com/cinema/43008-vue-manchester-printworks")
 ```
+## Example Usage
+```python
+from CinemaScraper import Cinema
+
+def run():
+    cinema = Cinema("Vue Manchester")
+    movie = cinema.getMovie("The Menu")
+    showTimes = movie.getTimesForDay("Sunday")
+    print(f'{movie.title is playing at the following times on Sunday at {cinema.name}}')
+    for time in showTimes:
+        print(time)
+        
+if __name == '__main__':
+    run()
+```
+Output
+```
+The Menu is playing at the following times on Sunday at Vue Manchester
+10:10
+12:10
+14:20
+16:45
+18:10
+19:50
+21:45
+```
