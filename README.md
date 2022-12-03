@@ -46,7 +46,7 @@ def run():
     cinema = Cinema("Vue Manchester")
     movie = cinema.getMovie("The Menu")
     showTimes = movie.getTimesForDay("Sunday")
-    print(f'{movie.title is playing at the following times on Sunday at {cinema.name}}')
+    print(f'{movie.title} is playing at the following times on Sunday at {cinema.name}}')
     for time in showTimes:
         print(time)
         
