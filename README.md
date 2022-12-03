@@ -15,13 +15,13 @@ The Cinema class takes 1 or 2 arguments, the first being the name of the cinema,
 ```python
     cinema = Cinema("Vue Manchester")
 ```
-##### Methods of Cinema include:
+### Methods of Cinema include:
 | Method           | Description                                                        |
 |------------------|------------------------------------------------------------------- |
 | getAllMovieData  | Returns a list of Movie objects containing movie data              |
 | printAllShowings | Neatly outputs all of the Movies and their times shown             |
 | printWhatsOn     | Neatly outputs only the Movie titles of everything that is playing |
-##### Movie Class
+### Movie Class
 The Movie Class stores the following data:
     - Title
     - Description
@@ -34,7 +34,7 @@ These can be accessed with the following:
     Movie.showTimes
     Movie.image
 ```
-##### The Curator
+### The Curator
 The curator is a class that handles the scraping i.e. fetching the data.
 Movie data can be fetched directly from a page using the curator class and returned as a list without instantiating a Cinema object
 ```python
