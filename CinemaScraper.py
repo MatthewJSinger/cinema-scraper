@@ -23,6 +23,13 @@ class Curator:
             name = movieData.h4.get_text()
             description = movieData.p.get_text()
             movie = Movie(name,description)
+
+            if movieData.find('img'):
+                imageTag = movieData.find('img')
+                image = imageTag['data-src']
+                image = "http:" + image
+                movie.addImage(image)
+
             rawDays = movieData.findAll('h5')
             for rawDay in rawDays:
                 day = self.parseDay(rawDay.get_text())
@@ -97,6 +104,8 @@ class Movie:
                'Friday':[],
                'Saturday': [],
                'Sunday': []}
+        self.image = ""
+
     def addShowing(self,day,times):
         if len(self.showTimes[day]) == 0:
             self.showTimes[day] = times
@@ -107,6 +116,10 @@ class Movie:
         for key in self.showTimes.keys():
             if len(self.showTimes[key]) != 0:
                 tempDict[key] = self.showTimes[key]
-        return tempDict        
+        return tempDict
+    def addImage(self,image):
+        self.image = image
+    def printMovieInfo(self):
+        print(f'Title: {self.title}\nDescription: {self.description}\nImage Link: {self.image}')
     def __repr__(self):
         return self.title
