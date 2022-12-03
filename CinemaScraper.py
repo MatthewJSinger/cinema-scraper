@@ -10,6 +10,7 @@ class Curator:
         if len(soup.select(".placeSummary a")) == 0:
             raise CinemaNotFoundError(searchQuery)
         rawLink = soup.select(".placeSummary a")[0]
+        adjustedName = soup.select(".placeSummary h2")[0]
         link = rawLink.get('href')
         return "https://film.datathistle.com/" + link
 
@@ -74,6 +75,14 @@ class Cinema:
     
     def getAllMovieData(self):
         return self.movieInfo
+    def getMovie(self,movieTitle):
+        movieFound = False
+        for movie in self.movieInfo:
+            if movie.title == movieTitle:
+                movieFound = True
+                return movie
+        if movieFound == False:
+            return f"Movie: {movieTitle} not found at {self.name}"
 
     def printAllShowings(self):
         print(f"----------{self.name}----------")
@@ -121,5 +130,5 @@ class Movie:
         self.image = image
     def printMovieInfo(self):
         print(f'Title: {self.title}\nDescription: {self.description}\nImage Link: {self.image}')
-    def __repr__(self):
+    def __str__(self):
         return self.title
