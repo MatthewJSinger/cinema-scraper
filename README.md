@@ -4,17 +4,13 @@ A script to find out what's on at the cinema
 ## Usage
 This project works by scraping data from the following website: [Data Thistle](https://film.datathistle.com/).
 The Cinema class can be used to scrape all the information of all the movies playing at that cinema for the next week.
-Import it like this:
-```python
-from CinemaScraper import Cinema
-```
 The Cinema class takes 1 or 2 arguments, the first being the name of the cinema, the second being the link to the page to scrape. If a link is not provided the script will attempt to find a cinema based on the name passed. For example; both of these work:
 ```Python
+from CinemaScraper import Cinema
     cinema = Cinema("Vue Manchester", "https://film.datathistle.com/cinema/43008-vue-manchester-printworks")
-```
-```python
     cinema = Cinema("Vue Manchester")
 ```
+
 ### Methods of Cinema include:
 | Method           | Description                                                        |
 |------------------|------------------------------------------------------------------- |
