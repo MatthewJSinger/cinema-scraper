@@ -23,11 +23,11 @@ The Cinema class takes 1 or 2 arguments, the first being the name of the cinema,
 | printWhatsOn     | Neatly outputs only the Movie titles of everything that is playing |
 ### Movie Class
 The Movie Class stores the following data:
-    - Title
-    - Description
-    - Show Times
-    - Link to poster image
-These can be accessed with the following:
+- Title
+- Description
+- Show Times
+- Link to poster image
+    These can be accessed with the following:
 ```python
     Movie.title
     Movie.description
