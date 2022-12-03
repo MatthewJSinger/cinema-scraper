@@ -27,6 +27,7 @@ The Movie Class stores the following data:
 - Description
 - Show Times
 - Link to poster image
+
     These can be accessed with the following:
 ```python
     Movie.title
