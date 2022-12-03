@@ -30,10 +30,10 @@ The Movie Class stores the following data:
 
     These can be accessed with the following:
 ```python
-    Movie.title
-    Movie.description
-    Movie.showTimes
-    Movie.image
+    movie.title
+    movie.description
+    movie.showTimes
+    movie.image
 ```
 ### The Curator
 The curator is a class that handles the scraping i.e. fetching the data.
