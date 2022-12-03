@@ -14,11 +14,21 @@ class Curator:
         link = rawLink.get('href')
         return "https://film.datathistle.com/" + link
 
+    def fetchName(self,URL):
+        page = requests.get(URL)
+        soup = BeautifulSoup(page.content, "lxml")
+        actualName = soup.find(class_="org").get_text()
+        return actualName
+
+
     def fetchMovieData(self,URL):
         page = requests.get(URL)
         soup = BeautifulSoup(page.content, "lxml")
         parent = soup.find(class_="eventSchedules")
         movies = parent.findChildren(class_="byEvent", recursive=False)
+        if(len(movies) == 0):
+            raise NoFilmsFoundError(URL)
+
         movieList = []
         for movieData in movies:
             name = movieData.h4.get_text()
@@ -67,6 +77,7 @@ class Cinema:
             self.URL = args[0]
         else:
             self.URL = Curator().fetchURL(self.name)
+            self.name = Curator().fetchName(self.URL)
 
         self.movieInfo = Curator().fetchMovieData(self.URL)
         
