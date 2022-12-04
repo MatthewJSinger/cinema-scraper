@@ -56,7 +56,7 @@ if __name == '__main__':
 ```
 Output
 ```
-The Menu is playing at the following times on Sunday at Vue Manchester
+The Menu is playing at the following times on Sunday at Vue Manchester Printworks
 10:10
 12:10
 14:20
