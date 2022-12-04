@@ -45,8 +45,9 @@ from CinemaScraper import Cinema
 def run():
     cinema = Cinema("Vue Manchester")
     movie = cinema.getMovie("The Menu")
-    showTimes = movie.getTimesForDay("Sunday")
-    print(f'{movie.title} is playing at the following times on Sunday at {cinema.name}}')
+    day = "Sunday"
+    showTimes = movie.getTimesForDay(day)
+    print(f'{movie.title} is playing at the following times on {day} at {cinema.name}}')
     for time in showTimes:
         print(time)
         
