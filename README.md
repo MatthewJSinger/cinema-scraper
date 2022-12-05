@@ -12,11 +12,12 @@ from CinemaScraper import Cinema
 ```
 
 ### Methods of Cinema include:
-| Method           | Description                                                        |
-|------------------|------------------------------------------------------------------- |
-| getAllMovieData  | Returns a list of Movie objects containing movie data              |
-| printAllShowings | Neatly outputs all of the Movies and their times shown             |
-| printWhatsOn     | Neatly outputs only the Movie titles of everything that is playing |
+| Method           | Description                                                                      |
+|------------------|--------------------------------------------------------------------------------- |
+| getAllMovieData  | Returns a list of Movie objects containing movie data                            |
+| getMovie         | Takes a movie title as paramater, returns corresponding movie object             |
+| printAllShowings | Neatly outputs all of the Movies and their times shown                           |
+| printWhatsOn     | Neatly outputs only the Movie titles of everything that is playing               |
 ### Movie Class
 The Movie Class stores the following data:
 - Title
