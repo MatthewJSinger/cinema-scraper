@@ -4,7 +4,10 @@
 
 A script to find out what's on at the cinema (UK). Written in Python.
 
-**Requires:** Beautiful Soup 4
+## Required Python Packages:
+- Requests
+- Beautiful Soup 4
+- lxml
 
 ## Usage
 This project works by scraping data from the following website: [Data Thistle](https://film.datathistle.com/).
