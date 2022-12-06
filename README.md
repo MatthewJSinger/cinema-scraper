@@ -1,6 +1,13 @@
-![Cinema Scraper](Banner.png)
+<div align="center">
+    <img src="Banner.png" alt="Cinema Scraper"/>
+</div>
 
-A script to find out what's on at the cinema
+A script to find out what's on at the cinema (UK)
+
+## Dependencies
+- Python 3
+- Beautiful Soup 4
+
 ## Usage
 This project works by scraping data from the following website: [Data Thistle](https://film.datathistle.com/).
 The Cinema class can be used to scrape all the information of all the movies playing at that cinema for the next week.
