@@ -37,7 +37,7 @@ class Curator:
 
             if movieData.find('img'):
                 imageTag = movieData.find('img')
-                image = imageTag['data-src']
+                image = imageTag['src']
                 image = "http:" + image
                 movie.addImage(image)
 
