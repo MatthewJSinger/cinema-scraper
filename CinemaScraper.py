@@ -55,19 +55,15 @@ class Curator:
 
     def parseDay(self,shortDayInput):
         shortDay = shortDayInput.split(" ")[0]
-        easyDays = ["Mon","Fri","Sun"]
-        if shortDay in easyDays:
-            return shortDay.title() + "day"
-        elif shortDay == "Tue":
-            return "Tuesday"
-        elif shortDay  == "Wed":
-            return "Wednesday"
-        elif shortDay == "Thu":
-            return "Thursday"
-        elif shortDay == "Sat":
-            return "Saturday"
-        else:
-            raise ValueError(shortDay)
+        dayDict = {"Mon": "Monday",
+                   "Tue": "Tuesday",
+                   "Wed": "Wednesday",
+                   "Thu": "Thursday",
+                   "Fri": "Friday",
+                   "Sat": "Saturday",
+                   "Sun": "Sunday"}
+        return dayDict[shortDay]
+
 
 class Cinema:
     def __init__(self,name,*args):
